@@ -1,3 +1,7 @@
+import 'package:rest_api_call/model/user_dob.dart';
+import 'package:rest_api_call/model/user_location.dart';
+import 'package:rest_api_call/model/user_name.dart';
+
 class User {
   final String gender;
   final String email;
@@ -5,6 +9,8 @@ class User {
   final String cell;
   final String nat;
   final UserName name;
+  final UserDob dob;
+  final UserLocation location;
   User({
     required this.gender,
     required this.email,
@@ -12,17 +18,11 @@ class User {
     required this.cell,
     required this.nat,
     required this.name,
+    required this.dob,
+    required this.location,
   });
-}
 
-class UserName {
-  final String title;
-  final String first;
-  final String last;
-
-  UserName({
-    required this.title,
-    required this.first,
-    required this.last,
-  });
+  String get fullName {
+    return '${name.title} ${name.first} ${name.last}';
+  }
 }
