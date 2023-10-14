@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:http/http.dart';
 import 'package:rest_api_call/model/user.dart';
 import 'package:rest_api_call/services/user_api.dart';
 
@@ -32,7 +31,7 @@ class _HomeScreenState extends State<HomeScreen> {
           // final color = user.gender == 'male' ? Colors.blue : Colors.green;
           return ListTile(
             title: Text(user.fullName),
-            subtitle: Text(user.location.state),
+            subtitle: Text(user.location.street.name),
             // tileColor: color,
           );
         },
